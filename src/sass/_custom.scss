@@ -1,0 +1,71 @@
+html,
+body,
+header,
+#home{
+    height: 100%;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-brand{
+    font-family: $logo;
+    font-style: italic;
+}
+
+#home{
+    background: url("../assets/cover.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#products,
+#contact{
+    height: auto;
+}
+
+#about {
+    background-color: $primary;
+    height: 100%;
+}
+
+.mask{
+    background-color: $mask;
+}
+
+.heading{
+    font-family: $sec;
+    font-weight: $bold;
+}
+
+.preheading{
+    font-family: $acc;
+    font-weight: $reg;
+}
+
+.action{
+    font-family: $sec;
+    font-weight: $heavy;
+}
+.action-2{
+    font-family: $pri;
+    font-weight: $bold;
+}
+
+.title{
+    font-family: $sec;
+    font-weight: $heavy;
+    letter-spacing: 0.08rem;
+}
+
+#signIn{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+footer {
+    font-family: $pri;
+    font-weight: $thin;
+    font-size: 0.7rem;
+}
