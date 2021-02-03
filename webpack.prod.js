@@ -19,6 +19,19 @@ module.exports = merge(common, {
 			new TerserPlugin(),
 			new HtmlWebpackPlugin({
 				template: './src/template.html',
+				filename: "index.html",
+				minify: {
+					removeAttributeQuotes: true,
+					collapseWhitespace: true,
+					removeComments: true,
+				},
+				options: {
+					publicPath: ''
+				}
+			}),
+			new HtmlWebpackPlugin({
+				template: './src/prodtemplate.html',
+				filename: "products.html",
 				minify: {
 					removeAttributeQuotes: true,
 					collapseWhitespace: true,

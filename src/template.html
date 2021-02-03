@@ -5,10 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Drogueria Aries</title>
 	</head>
-	<body>
+	<body class="main">
+
 		<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand text-center fs-1 text-primary me-0" href="#home">
+				<a class="navbar-brand text-center fs-1 text-primary me-0" href="index.html">
 					<img
 						src=".\assets\logo.jpg"
 						alt=""
@@ -32,7 +33,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 ms-2">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#home">Inicio</a>
+							<a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +41,7 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							  <li><a class="dropdown-item" href="#products">En oferta</a></li>
-							  <li><a class="dropdown-item" href="#">Lista completa</a></li>
+							  <li><a class="dropdown-item" href="products.html">Lista completa</a></li>
 							</ul>
 						  </li>
 						<li class="nav-item">
@@ -50,8 +51,11 @@
 							<a class="nav-link" href="#contact">Contactanos</a>
 						</li>
 					</ul>
-					<div class="d-flex ms-2 py-2 pe-2">
-						<button class="btn btn-primary">Ingresar</button>
+					<div id="whenSignedOut" class="d-flex ms-2 py-2 pe-2">
+						<button class="btn btn-primary" id="signInBtn">Ingresar</button>
+					</div>
+					<div id="whenSignedIn" class="d-flex ms-2 py-2 pe-2 d-none">
+						<button class="btn btn-danger" id="signOutBtn">Salir</button>
 					</div>
 				</div>
 			</div>
@@ -149,7 +153,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="text-center mb-4">			<a href="#products"><button
+			<div class="text-center mb-4">			<a href="products.html"><button
 				type="button"
 				class="btn btn-lg btn-secondary text-white action-2 display-4"
 			>
@@ -225,8 +229,8 @@
 		<footer class="bg-primary p-4 text-center text-white">
 			© Drogueria Aries 2000 | Diseñado por Felipe Poviña
 		</footer>
-
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		
+    		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
 		<!-- TODO: Add SDKs for Firebase products that you want to use

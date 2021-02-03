@@ -1,7 +1,8 @@
 html,
 body,
 header,
-#home{
+#home,
+#home_products{
     height: 100%;
     background-color: white;
     -webkit-background-size: cover;
@@ -15,13 +16,15 @@ header,
     font-style: italic;
 }
 
-#home{
+#home,
+#home_products{
     background: url("../assets/cover.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
 #products,
-#contact{
+#contact,
+#home_products{
     height: auto;
 }
 
