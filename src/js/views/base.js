@@ -7,7 +7,9 @@ export const elements = {
     signInBtn : document.getElementById('signInBtn'),
     signOutBtn : document.getElementById('signOutBtn'),
 
-    addProd : document.getElementById('addProd'),
-    deleteProd : document.getElementById('deleteProd'),
-    prodList : document.getElementById('prodList'),
+    newProd : document.getElementById('newProd'), //form
+    addProd: document.getElementById('addProd'), //submit
+    selectProd : document.getElementById('selectProd'), //toggle
+    deleteProd : document.getElementById('deleteProd'), //submit
+    prodList : document.getElementById('prodList'), //select from
 };
