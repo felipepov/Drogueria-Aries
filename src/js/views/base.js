@@ -12,4 +12,6 @@ export const elements = {
     selectProd : document.getElementById('selectProd'), //toggle
     deleteProd : document.getElementById('deleteProd'), //submit
     prodList : document.getElementById('prodList'), //select from
+    uploader: document.getElementById('uploader'),
+    discountProdList : document.getElementById('discountProdList'),
 };
