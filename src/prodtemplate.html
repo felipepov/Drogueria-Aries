@@ -79,7 +79,7 @@
 			<div
 				class="mask bg-image text-center py-5 px-1 px-md-5 mt-5 overflow-hidden h-100"
 			>
-			<div id="signInAlert" class="alert alert-primary alert-dismissible fade show position-absolute d-none" role="alert">
+			<div id="signInAlert" class="alert alert-primary alert-dismissible fade show d-none" role="alert">
 			  </div>
 				<div class="row row-cols-1 g-2 mt-5 row-cols-md-2" id="prodContainer">
 					<div
@@ -183,7 +183,7 @@
 												<div class="mb-3 d-none">
 
 													<div class="progress">
-														<div class="progress-bar" id="uploader" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+														<div class="progress-bar progress-bar-striped bg-success" id="uploader" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 													  </div>
 
 													<label for="image" class="form-label fw-bold"
@@ -233,6 +233,7 @@
 											role="tabpanel"
 											aria-labelledby="list-delete-list"
 										>
+										
 											<div
 												class="d-flex flex-column py-2 px-4 rounded bg-light"
 											>
@@ -244,6 +245,8 @@
 												>
 												<button
 													type="button"
+													role="button"
+													data-bs-toggle="button" autocomplete="off"
                                                     class="btn btn-danger m-2"
                                                     id="deleteProd"
 													disabled
