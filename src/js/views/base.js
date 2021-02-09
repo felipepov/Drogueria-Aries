@@ -6,6 +6,7 @@ export const elements = {
     whenSignedOut : document.getElementById('whenSignedOut'),
     signInBtn : document.getElementById('signInBtn'),
     signOutBtn : document.getElementById('signOutBtn'),
+    signInAlert : document.getElementById('signInAlert'),
 
     newProd : document.getElementById('newProd'), //form
     addProd: document.getElementById('addProd'), //submit
