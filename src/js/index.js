@@ -1,4 +1,4 @@
-import 'bootstrap';
+// import 'bootstrap';
 import '../sass/main.scss';
 import './vendor';
 
@@ -11,7 +11,10 @@ const auth = firebase.default.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
 // Todo:
+// - Purge bootstrap
 // - Don't finish image upload untill clicked sent button
+// - Include pagination
+// - Order by creation, alphabetically and by origin
 // - Ask user for extra credentials
 // - Register user in documents
 // - Role based authentication: visitor (read), client (prices) and admin
