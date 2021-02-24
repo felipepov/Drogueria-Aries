@@ -1,6 +1,6 @@
 import 'bootstrap';
 import '../sass/main.scss';
-import './vendor';
+// import './vendor';
 
 import { elements } from './views/base.js';
 import * as listView from './views/listView.js';
@@ -9,14 +9,15 @@ const state = {};
 const db = firebase.firestore();
 const auth = firebase.default.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-
 // Todo:
-// - Don't finish image upload untill clicked sent button
+// - Filter by discount and by time created
+// - Include pagination
 // - Ask user for extra credentials
 // - Register user in documents
 // - Role based authentication: visitor (read), client (prices) and admin
 // - Don't let  control panel appear if not authorized
 // - Don't trust user input
+// - Purge Bootstrap
 
 auth.onAuthStateChanged((user) => {
 	let unsubscribe;
@@ -102,6 +103,7 @@ auth.onAuthStateChanged((user) => {
 
 			// DELETING
 			elements.selectProd.addEventListener('click', () => {
+				elements.selectProd.classList.add('active')
 				if (elements.selectProd.classList.contains('active')) {
 					// Add btn btn-outline-danger classess
 					elements.prodList.childNodes.forEach((child) => {
@@ -229,6 +231,7 @@ auth.onAuthStateChanged((user) => {
 						});
 					});
 				}
+				elements.selectProd.classList.remove('active')
 			});
 
 			// STORING IMAGE
@@ -292,6 +295,7 @@ auth.onAuthStateChanged((user) => {
 
 		// Fetch all products
 		unsubscribe = state.prodsRef
+			.orderBy('discount', "desc")
 			.orderBy('createdAt') // Requires a query
 			.onSnapshot((querySnapshot) => {
 				// Map results to an array of li elements
@@ -351,7 +355,8 @@ auth.onAuthStateChanged((user) => {
 		elements.signInAlert.innerHTML = ``;
 
 		if (document.URL.includes('products.html')) {
-			state.prodsRef.get().then((querySnapshot) => {
+			state.prodsRef			.orderBy('discount', "desc")
+			.orderBy('createdAt').get().then((querySnapshot) => {
 				const items = querySnapshot.docs.map((doc) => {
 					return `    <ul class="list-group list-group-horizontal" id="${
 						doc.id
