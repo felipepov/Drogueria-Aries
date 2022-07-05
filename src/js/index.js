@@ -10,7 +10,6 @@ const db = firebase.firestore();
 const auth = firebase.default.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 // Todo:
-// - Filter by discount and by time created
 // - Include pagination
 // - Ask user for extra credentials
 // - Register user in documents
