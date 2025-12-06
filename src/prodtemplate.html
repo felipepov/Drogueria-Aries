@@ -4,6 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Products</title>
+		<style>
+			@keyframes shimmer {
+				0% { background-position: -1000px 0; }
+				100% { background-position: 1000px 0; }
+			}
+			.skeleton {
+				background: linear-gradient(90deg, #f0f0f0 0px, #e0e0e0 40px, #f0f0f0 80px);
+				background-size: 1000px 100%;
+				animation: shimmer 1.5s infinite linear;
+				border-radius: 4px;
+			}
+			.skeleton-text {
+				height: 1rem;
+				margin-bottom: 0.5rem;
+			}
+			.skeleton-text.short { width: 60%; }
+			.skeleton-text.medium { width: 80%; }
+			.skeleton-text.long { width: 100%; }
+		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -94,7 +113,55 @@
 							</li>
                         </ul>
                         <section id="prodList" class="list-group list-group-vertical">
-<div class="bg-white text-primary text-center p-3 border rounded"><h6>Estableciendo conexion a la base de datos...</h6></div>
+							<!-- Skeleton loading placeholders -->
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text long"></div>
+								</li>
+								<li class="list-group-item w-100">
+									<div class="skeleton skeleton-text medium"></div>
+								</li>
+							</ul>
                     </section>
 					</div>
 

@@ -335,9 +335,9 @@ auth.onAuthStateChanged((user) => {
 				});
 
 				if (document.URL.includes('products.html')) {
-					elements.prodList.innerHTML = items.join('');
+					elements.prodList.innerHTML = items.length > 0 ? items.join('') : elements.prodList.innerHTML;
 				} else {
-					elements.discountProdList.innerHTML = items.join('');
+					elements.discountProdList.innerHTML = items.length > 0 ? items.join('') : elements.discountProdList.innerHTML;
 				}
 			});
 
@@ -364,7 +364,7 @@ auth.onAuthStateChanged((user) => {
                      <li class="list-group-item w-100">${doc.data().lab}</li>
                  </ul>`;
 				});
-				elements.prodList.innerHTML = items.join('');
+				elements.prodList.innerHTML = items.length > 0 ? items.join('') : elements.prodList.innerHTML;
 			});
 		} else {
 			state.prodsRef.get().then((querySnapshot) => {
@@ -394,7 +394,7 @@ auth.onAuthStateChanged((user) => {
                     </div>`;
 					}
 				});
-				elements.discountProdList.innerHTML = items.join('');
+				elements.discountProdList.innerHTML = items.length > 0 ? items.join('') : elements.discountProdList.innerHTML;
 			});
 		}
 
