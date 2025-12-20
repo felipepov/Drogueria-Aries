@@ -105,12 +105,75 @@ The application will be available at `http://localhost:8080` (or the port specif
 
 ### Building for Production
 
-Build the project:
+**Important**: This project uses older package versions that may have compatibility issues with Node.js 17+. 
+
+**Option 1: Use Node.js 16 or earlier** (Recommended)
+```bash
+# If you have nvm installed:
+nvm use 16
+npm run build
+```
+
+**Option 2: Use Node.js 18+ with legacy OpenSSL** (Workaround)
+```bash
+NODE_OPTIONS=--openssl-legacy-provider npm run build
+```
+
+**Note**: You may still encounter build errors with postcss-loader. If so, you may need to:
+- Use Node.js 16 or earlier, or
+- Manually copy the updated HTML files to the `dist/` folder if you only changed HTML/CSS
+
+The compiled files will be in the `dist/` directory.
+
+## Deployment
+
+### Deploying to Firebase Hosting
+
+To deploy the application with your changes to Firebase Hosting:
+
+1. **Build the project** (this compiles all changes including skeleton placeholders):
 ```bash
 npm run build
 ```
 
-The compiled files will be in the `dist/` directory.
+2. **Make sure you're logged into Firebase CLI**:
+```bash
+firebase login
+```
+
+3. **Verify your Firebase project** (if not already set):
+```bash
+firebase use <your-project-id>
+```
+
+4. **Deploy to Firebase Hosting**:
+```bash
+npm run deploy
+```
+
+Or directly:
+```bash
+firebase deploy --only hosting
+```
+
+### Deployment Checklist
+
+Before deploying, ensure:
+- ✅ All changes are built (`npm run build` completed successfully)
+- ✅ Firebase project is configured correctly
+- ✅ Firebase config in HTML files matches your project
+- ✅ You're logged into Firebase CLI
+- ✅ The `dist/` folder contains the latest build
+
+### What Gets Deployed
+
+The deployment process:
+1. Builds all source files (HTML, JS, CSS, assets)
+2. Optimizes and minifies code
+3. Uploads the `dist/` folder to Firebase Hosting
+4. Makes the site available at your Firebase Hosting URL
+
+**Note**: The skeleton placeholders will be visible on the deployed site until the database connection is properly configured.
 
 ### Firebase Configuration
 
